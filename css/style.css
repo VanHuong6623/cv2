@@ -1,0 +1,89 @@
+* {
+  /* reset CSS */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+header {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  background-color: transparent;
+  width: 100%;
+  padding: 30px 0;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav li {
+  margin: 0 20px;
+  overflow: hidden;
+  padding: 0 5px;
+}
+header nav li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+header nav ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+header .logo h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 12;
+  color: #fff;
+}
+header nav button {
+  padding: 13px 30px;
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+header nav button:hover {
+  background-color: #fff;
+  color: #000;
+  transform: translateY(-3px);
+}
+header li:hover a::after {
+  width: 100%;
+}
+header li:hover a::before {
+  width: 100%;
+  transform: translateX(0%);
+}
+/* sau mỗi li sẽ sinh ra 1 thẻ khác */
+header li a::after {
+  content: "";
+  height: 2px;
+  background-color: #fff;
+  display: block;
+  width: 0;
+  transition: all 0.3s;
+  margin-top: 0.7px;
+}
+header li a::before {
+  content: "";
+  height: 2px;
+  background-color: #fff;
+  display: block;
+  width: 0;
+  transition: all 1s;
+  margin-top: 0.7px;
+  transform: translateX(100%);
+}
+
+.background {
+  height: 100vh;
+  background-size: cover;
+  background-image: url(http://shanereact.ibthemespro.com/img/slider/3.jpg);
+}
