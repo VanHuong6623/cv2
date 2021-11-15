@@ -1,17 +1,20 @@
 * {
-  /* reset CSS */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+
+/* header */
 header {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   position: fixed;
+  left: 0;
+  right: 0;
   background-color: transparent;
-  width: 100%;
-  padding: 30px 0;
+  padding: 20px 0;
 }
 
 header nav {
@@ -22,13 +25,15 @@ header nav {
 header nav li {
   margin: 0 20px;
   overflow: hidden;
-  padding: 0 5px;
 }
+
 header nav li a {
   text-decoration: none;
   color: #fff;
   font-weight: 500;
+  font-family: "Poppins", sans-serif;
 }
+
 header nav ul {
   display: flex;
   list-style: none;
@@ -37,53 +42,111 @@ header nav ul {
 
 header .logo h1 {
   font-family: "Dancing Script", cursive;
-  font-size: 12;
+  font-weight: 700;
+  font-size: 50px;
   color: #fff;
 }
+
 header nav button {
-  padding: 13px 30px;
+  padding: 11px 30px;
   background-color: transparent;
   border: 2px solid #fff;
   color: #fff;
   text-transform: uppercase;
   cursor: pointer;
+  font-size: 17px;
   transition: all 0.2s;
 }
-header nav button:hover {
-  background-color: #fff;
-  color: #000;
-  transform: translateY(-3px);
-}
+
 header li:hover a::after {
   width: 100%;
 }
+
 header li:hover a::before {
   width: 100%;
   transform: translateX(0%);
 }
-/* sau mỗi li sẽ sinh ra 1 thẻ khác */
+
+header li a::before {
+  content: "";
+  height: 2.3px;
+  background-color: #fff;
+  display: block;
+  width: 100%;
+  transition: all 0.3s;
+  margin-top: 0.7px;
+  transform: translateX(100%);
+}
+
 header li a::after {
   content: "";
-  height: 2px;
+  height: 2.3px;
   background-color: #fff;
   display: block;
   width: 0;
   transition: all 0.3s;
   margin-top: 0.7px;
 }
-header li a::before {
-  content: "";
-  height: 2px;
+
+.line {
   background-color: #fff;
-  display: block;
+  height: 2px;
   width: 0;
-  transition: all 1s;
-  margin-top: 0.7px;
-  transform: translateX(100%);
+  transition: all 0.5s;
 }
 
+header nav button:hover {
+  background-color: #fff;
+  color: #000;
+  transform: translateY(-3px);
+}
+
+/* background */
 .background {
   height: 100vh;
   background-size: cover;
   background-image: url(http://shanereact.ibthemespro.com/img/slider/3.jpg);
+}
+.bar {
+  height: fit-content;
+  display: none;
+}
+.bar i {
+  color: #333;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.nav-phone {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #333;
+  color: #fff;
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+/* cho code ngắn hơn thì
+coding convention
+*/
+/* SASS/SCSS: CSS prepor */
+
+@media only screen and (max-width: 1000px) {
+  nav {
+    display: none !important;
+  }
+  header {
+    background-color: #fff;
+    position: unset;
+    padding: 10px 0;
+  }
+  .bar {
+    display: block;
+  }
+  header .logo h1 {
+    color: #333;
+  }
 }
